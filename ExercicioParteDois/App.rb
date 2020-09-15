@@ -1,11 +1,17 @@
 require_relative 'AnalisadorLinha.rb'
 
+analisadores = []
+
 File.open('Arquivo.txt').each do |line|
 
-    analisador = AnalisadorLinha.new($. , line)
+    analisadorlinha = AnalisadorLinha.new($. , line)
 
-    analisador.freqLinha
+    analisadores.push(analisadorlinha)
        
 end
- 
-  
+
+    analisadores.each do |analisador|
+    
+        analisador.freqLinha
+
+end
